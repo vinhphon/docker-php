@@ -1,0 +1,46 @@
+on:
+ workflow_dispatch:
+    inputs:
+      version:
+        description: 'Php Version'
+        required: true
+        default: '8.2'
+        type: string
+      composer_version:
+        description: 'Composer Version'
+        required: true
+        default: '2.2.21'
+        type: string
+      extensions:
+        description: 'Php Extensions'
+        type: string
+        default: 'bcmath bz2 calendar exif gd gettext intl mysqli opcache pdo_mysql redis soap sockets sodium sysvmsg sysvsem sysvshm xsl zip pcntl'
+        required: true
+
+name: Built and push PHP images
+
+run-name: Built and push PHP ${{ inputs.version }}
+
+jobs:
+  bake:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+      - name: Login to DockerHub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: Build and push
+        uses: docker/bake-action@v2
+        env: 
+          TAG: ${{ inputs.version }}
+        with:
+          push: true
+          set: |
+            *.args.VERSION=${{ inputs.version }}
+            *.args.EXTENSIONS=${{ inputs.extensions }}
+            cli.args.COMPOSER_VERSION=${{ inputs.composer_version }}

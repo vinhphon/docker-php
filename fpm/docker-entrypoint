@@ -1,0 +1,11 @@
+#!/bin/sh
+
+[ "$DEBUG" = "true" ] && set -x
+
+if [ ! -z "${PHP_EXTENSIONS}" ]; then
+  PHP_EXT_DIR=/usr/local/etc/php/conf.d
+  [ -d ${PHP_EXT_DIR} ] && rm -f ${PHP_EXT_DIR}/docker-php-ext-*.ini
+  PHPIZE_DEPS="" docker-php-ext-enable ${PHP_EXTENSIONS}
+fi
+
+exec "$@"
