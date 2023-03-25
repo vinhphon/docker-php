@@ -17,9 +17,9 @@ on:
         default: 'bcmath bz2 calendar exif gd gettext intl mysqli opcache pdo_mysql redis soap sockets sodium sysvmsg sysvsem sysvshm xsl zip pcntl'
         required: true
 
-name: Built and push PHP images
+name: Build and push PHP images
 
-run-name: Built and push PHP ${{ inputs.version }}
+run-name: Build and push PHP ${{ inputs.version }}
 
 jobs:
   bake:
