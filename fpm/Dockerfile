@@ -1,7 +1,7 @@
 ARG VERSION=8.2
 FROM php:${VERSION}-fpm-alpine
 
-LABEL maintainer="phon@iamphon.com"
+LABEL maintainer="admin@iamphon.com"
 LABEL repo="https://github.com/vinhphon/docker-php"
 
 ARG UID=1000
@@ -11,8 +11,9 @@ ARG EXTENSIONS="bcmath bz2 calendar exif gd gettext intl mysqli opcache pdo_mysq
 
 ENV DEBUG false
 ENV PHP_MEMORY_LIMIT 2G
-ENV PHP_VALIDATE_TIMESTAMPS 0
-ENV UPLOAD_MAX_FILESIZE 128MB
+ENV PHP_VALIDATE_TIMESTAMPS 1
+ENV UPLOAD_MAX_FILESIZE 128M
+ENV POST_MAX_SIZE 128M
 
 #Install install-php-extensions
 COPY --from=mlocati/php-extension-installer /usr/bin/install-php-extensions /usr/local/bin/
@@ -44,14 +45,6 @@ WORKDIR ${SOURCE_ROOT}
 
 #Switch container run as non-root
 USER www
-
-#Copy your app code here
-#COPY . .
-
-#Excuting your deployment here, such as: composer install etc...
-#RUN set -eux; \
-#    composer install; \
-#    rm -rf ${COMPOSER_HOME}/cache
 
 ENTRYPOINT ["docker-entrypoint"]
 

@@ -1,7 +1,7 @@
 ARG VERSION=8.2
 FROM php:${VERSION}-cli-alpine
 
-LABEL maintainer="phon@iamphon.com"
+LABEL maintainer="admin@iamphon.com"
 LABEL repo="https://github.com/vinhphon/docker-php"
 
 ARG UID=1000
@@ -36,7 +36,7 @@ COPY docker-entrypoint      /usr/local/bin/
 
 #Permission www and cron
 RUN set -eux; \
-    apk add --no-cache dcron libcap; \
+    apk add --no-cache dcron libcap patch; \
     mkdir -p ${SOURCE_ROOT} ${COMPOSER_HOME} /var/www/log; \
     addgroup -S -g ${UID} www; \
     adduser -S -D -u ${GID} -s /sbin/nologin -h /var/www -G www www; \
