@@ -1,7 +1,6 @@
 #!/bin/sh
 
-[ "$DEBUG" = "true" ] && set -x
-
+#Enable php extensions if has defined as ENV
 if [ ! -z "${PHP_EXTENSIONS}" ]; then
   PHP_EXT_DIR=/usr/local/etc/php/conf.d
   [ -d ${PHP_EXT_DIR} ] && rm -f ${PHP_EXT_DIR}/docker-php-ext-*.ini

@@ -17,7 +17,6 @@ RUN set -eux; \
     apk --no-cache add shadow;\
     usermod -uid ${UID} www; \
     groupmod --gid ${GID} www; \
-    chown -R www:www /usr/local/etc/php/conf.d; \
     apk del --purge shadow;
 
 USER www
@@ -29,7 +28,3 @@ USER www
 #RUN set -eux; \
 #    composer install; \
 #    rm -rf ${COMPOSER_HOME}/cache
-
-ENTRYPOINT ["docker-entrypoint"]
-
-CMD ["php-fpm", "-R"]

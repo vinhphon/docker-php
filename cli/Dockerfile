@@ -11,7 +11,6 @@ ARG COMPOSER_VERSION=2.2.21
 ARG EXTENSIONS="bcmath bz2 calendar exif gd gettext intl mysqli opcache pdo_mysql redis soap sockets sodium sysvmsg sysvsem sysvshm xsl zip pcntl"
 ARG CRONTAB=""
 
-ENV DEBUG false
 ENV PHP_MEMORY_LIMIT -1
 ENV PHP_MAX_EXECUTION_TIME -1
 ENV PHP_VALIDATE_TIMESTAMPS 0

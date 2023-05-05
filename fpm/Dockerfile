@@ -9,7 +9,6 @@ ARG GID=1000
 ARG SOURCE_ROOT=/var/www/html
 ARG EXTENSIONS="bcmath bz2 calendar exif gd gettext intl mysqli opcache pdo_mysql redis soap sockets sodium sysvmsg sysvsem sysvshm xsl zip pcntl"
 
-ENV DEBUG false
 ENV PHP_MEMORY_LIMIT 2G
 ENV PHP_VALIDATE_TIMESTAMPS 1
 ENV UPLOAD_MAX_FILESIZE 128M
