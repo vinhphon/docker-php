@@ -17,13 +17,16 @@ ENV PHP_VALIDATE_TIMESTAMPS 0
 ENV COMPOSER_HOME /var/www/composer
 
 #Install install-php-extensions
-COPY --from=mlocati/php-extension-installer /usr/bin/install-php-extensions /usr/local/bin/
+ADD https://raw.githubusercontent.com/vinhphon/docker-php-extension-installer/master/install-php-extensions /usr/local/bin/
 
 #Install extensions
-RUN IPE_GD_WITHOUTAVIF=1 IPE_ICU_EN_ONLY=1 install-php-extensions @composer-${COMPOSER_VERSION} ${EXTENSIONS}
+RUN set -eux; \
+    chmod +x /usr/local/bin/install-php-extensions; \
+    IPE_GD_WITHOUTAVIF=1 IPE_ICU_EN_ONLY=1 install-php-extensions @composer-${COMPOSER_VERSION} ${EXTENSIONS}
 
 #Install lib for docker-php-ext-enable
 RUN set -eux; \
+    chmod +x /usr/local/bin/install-php-extensions; \
     apk add --no-cache --virtual .build-deps binutils; \
     cp /usr/bin/readelf /usr/local/bin/readelf; \
     if [ -f /usr/lib/libctf-nobfd.so.0 ]; then cp /usr/lib/libctf-nobfd.so.0 /usr/local/lib/libctf-nobfd.so.0; fi ;\
