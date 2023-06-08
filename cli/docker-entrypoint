@@ -3,18 +3,18 @@
 #Enable php extensions if has defined as ENV
 if [ ! -z "${PHP_EXTENSIONS}" ]; then
   PHP_EXT_DIR=/usr/local/etc/php/conf.d
-  [ -d ${PHP_EXT_DIR} ] && rm -f ${PHP_EXT_DIR}/docker-php-ext-*.ini
-  PHPIZE_DEPS="" docker-php-ext-enable ${PHP_EXTENSIONS}
+  [ -d ${PHP_EXT_DIR} ] && rm -f ${PHP_EXT_DIR}/docker-php-ext-*.ini ${PHP_EXT_DIR}/xx-php-ext-*.ini
+  PHPIZE_DEPS="" docker-php-ext-enable --ini-name 000-enabled-exts.ini ${PHP_EXTENSIONS}
 fi
+
+# Configure composer
+[ ! -z "${COMPOSER_VERSION}" ] && \
+    composer self-update ${COMPOSER_VERSION}
 
 #Setup new crontab if has defined as ENV
 if [ ! -z "${CRONTAB}" ]; then
     echo "${CRONTAB}" > /var/spool/cron/crontabs/$(whoami)
     crond -f
 fi
-
-# Configure composer
-[ ! -z "${COMPOSER_VERSION}" ] && \
-    composer self-update ${COMPOSER_VERSION}
 
 exec "$@"
