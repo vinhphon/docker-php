@@ -27,6 +27,7 @@ RUN set -eux; \
     apk add --no-cache --virtual .build-deps binutils; \
     cp /usr/bin/readelf /usr/local/bin/readelf; \
     if [ -f /usr/lib/libctf-nobfd.so.0 ]; then cp /usr/lib/libctf-nobfd.so.0 /usr/local/lib/libctf-nobfd.so.0; fi ;\
+    if [ -f /usr/lib/libsframe.so.0 ]; then cp /usr/lib/libsframe.so.0 /usr/local/lib/libsframe.so.0; fi ;\
     apk del --no-network .build-deps;
 
 #Copy config

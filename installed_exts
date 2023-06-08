@@ -1,0 +1,19 @@
+5.6
+bcmath bz2 calendar dba enchant exif gd gettext gmp imap intl ldap mcrypt mysqli odbc opcache pcntl pdo_mysql pdo_odbc pdo_pgsql pgsql pspell redis shmop snmp soap sockets sodium sysvmsg sysvsem sysvshm tidy xmlrpc xsl zip composer@1.10.26
+7.0
+bcmath bz2 calendar dba enchant exif gd gettext gmp imap intl ldap mcrypt mysqli odbc opcache pcntl pdo_mysql pdo_odbc pdo_pgsql pgsql pspell redis shmop snmp soap sockets sodium sysvmsg sysvsem sysvshm tidy xmlrpc xsl zip composer@1.10.26
+7.1
+bcmath bz2 calendar dba enchant exif gd gettext gmp imap intl ldap mcrypt mysqli odbc opcache pcntl pdo_mysql pdo_odbc pdo_pgsql pgsql pspell redis shmop snmp soap sockets sodium sysvmsg sysvsem sysvshm tidy xmlrpc xsl zip composer@1.10.26
+7.2
+bcmath bz2 calendar dba enchant exif gd gettext gmp imap intl ldap        mysqli odbc opcache pcntl pdo_mysql pdo_odbc pdo_pgsql pgsql pspell redis shmop snmp soap sockets sodium sysvmsg sysvsem sysvshm tidy xmlrpc xsl zip composer@1.10.26
+7.3
+bcmath bz2 calendar dba enchant exif gd gettext gmp imap intl ldap        mysqli odbc opcache pcntl pdo_mysql pdo_odbc pdo_pgsql pgsql pspell redis shmop snmp soap sockets sodium sysvmsg sysvsem sysvshm tidy xmlrpc xsl zip composer@1.10.26
+7.4
+bcmath bz2 calendar dba enchant exif gd gettext gmp imap intl ldap        mysqli odbc opcache pcntl pdo_mysql pdo_odbc pdo_pgsql pgsql pspell redis shmop snmp soap sockets sodium sysvmsg sysvsem sysvshm tidy xmlrpc xsl zip composer@1.10.26
+8.0
+bcmath bz2 calendar dba enchant exif gd gettext gmp imap intl ldap        mysqli odbc opcache pcntl pdo_mysql pdo_odbc pdo_pgsql pgsql pspell redis shmop snmp soap sockets sodium sysvmsg sysvsem sysvshm tidy xmlrpc xsl zip composer@2.1.14
+8.1
+bcmath bz2 calendar dba enchant exif gd gettext gmp imap intl ldap        mysqli odbc opcache pcntl pdo_mysql pdo_odbc pdo_pgsql pgsql pspell redis shmop snmp soap sockets sodium sysvmsg sysvsem sysvshm tidy xmlrpc xsl zip composer@2.1.14
+8.2
+bcmath bz2 calendar dba enchant exif gd gettext gmp imap intl ldap        mysqli odbc opcache pcntl pdo_mysql pdo_odbc pdo_pgsql pgsql pspell redis shmop snmp soap sockets sodium sysvmsg sysvsem sysvshm tidy xmlrpc xsl zip composer@2.2.21
+

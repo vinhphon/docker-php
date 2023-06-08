@@ -49,9 +49,9 @@ Supported extensions from [mlocati/docker-php-extension-installer](https://githu
 
 ## Built images php extensions
 
-    * 5.6 -> 7.1: bcmath bz2 calendar exif gd gettext intl mysqli mcrypt opcache pdo_mysql redis soap sockets sysvmsg sysvsem sysvshm xsl zip pcntl
+    * 5.6 -> 7.1: bcmath bz2 calendar dba enchant exif gd gettext gmp imap intl ldap mcrypt mysqli odbc opcache pcntl pdo_mysql pdo_odbc pdo_pgsql pgsql pspell redis shmop snmp soap sockets sodium sysvmsg sysvsem sysvshm tidy xmlrpc xsl zip
 
-    * 7.2 -> 8.x: bcmath bz2 calendar exif gd gettext intl mysqli opcache pdo_mysql redis soap sockets sodium sysvmsg sysvsem sysvshm xsl zip pcntl
+    * 7.2 -> 8.x: bcmath bz2 calendar dba enchant exif gd gettext gmp imap intl ldap        mysqli odbc opcache pcntl pdo_mysql pdo_odbc pdo_pgsql pgsql pspell redis shmop snmp soap sockets sodium sysvmsg sysvsem sysvshm tidy xmlrpc xsl zip
 
 
 ## Contributing
