@@ -8,7 +8,7 @@ ARG UID=1000
 ARG GID=1000
 ARG SOURCE_ROOT=/var/www/html
 ARG COMPOSER_VERSION=2.2.21
-ARG EXTENSIONS="bcmath bz2 calendar exif gd gettext intl mysqli opcache pdo_mysql redis soap sockets sodium sysvmsg sysvsem sysvshm xsl zip pcntl"
+ARG EXTENSIONS="bcmath bz2 calendar dba enchant exif gd gettext gmp imap intl ldap mysqli odbc opcache pcntl pdo_mysql pdo_odbc pdo_pgsql pgsql pspell redis shmop snmp soap sockets sodium sysvmsg sysvsem sysvshm tidy xmlrpc xsl zip"
 ARG CRONTAB=""
 
 ENV PHP_MEMORY_LIMIT -1

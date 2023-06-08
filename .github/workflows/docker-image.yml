@@ -14,7 +14,7 @@ on:
       extensions:
         description: 'Php Extensions'
         type: string
-        default: 'bcmath bz2 calendar exif gd gettext intl mysqli opcache pdo_mysql redis soap sockets sodium sysvmsg sysvsem sysvshm xsl zip pcntl'
+        default: 'bcmath bz2 calendar dba enchant exif gd gettext gmp imap intl ldap mysqli odbc opcache pcntl pdo_mysql pdo_odbc pdo_pgsql pgsql pspell redis shmop snmp soap sockets sodium sysvmsg sysvsem sysvshm tidy xmlrpc xsl zip'
         required: true
 
 name: Build and push PHP images
