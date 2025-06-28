@@ -1,7 +1,7 @@
 ARG VERSION=8.2
 FROM php:${VERSION}-cli-alpine
 
-LABEL maintainer="admin@iamphon.com"
+LABEL maintainer="me@phon.dev"
 LABEL repo="https://github.com/vinhphon/docker-php"
 
 ARG UID=1000
@@ -31,6 +31,7 @@ RUN set -eux; \
     cp /usr/bin/readelf /usr/local/bin/readelf; \
     if [ -f /usr/lib/libctf-nobfd.so.0 ]; then cp /usr/lib/libctf-nobfd.so.0 /usr/local/lib/libctf-nobfd.so.0; fi ;\
     if [ -f /usr/lib/libsframe.so.0 ]; then cp /usr/lib/libsframe.so.0 /usr/local/lib/libsframe.so.0; fi ;\
+    if [ -f /usr/lib/libsframe.so.1 ]; then cp /usr/lib/libsframe.so.1 /usr/local/lib/libsframe.so.1; fi ;\
     apk del --no-network .build-deps;
 
 #Copy config
